@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import { useAuth } from "../context/authContext";
 
 export const Signup = () => {
+  const { Signup } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  function handleSubmit(e){
+    e.PreventDefault();
+  }
 
   return (
     <div className="container">
@@ -30,7 +36,7 @@ export const Signup = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         ></input>
 
-        <button className="button-block" type="submit">
+        <button oncClick={handleSubmit} className="button-block" type="submit">
           Signup
         </button>
       </form>
