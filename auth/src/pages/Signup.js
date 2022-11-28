@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import { useAuth } from "../context/authContext";
 
 export const Signup = () => {
-  const { Signup } = useAuth();
+  const { singUp } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   async function handleSubmit(e) {
-    e.PreventDefault();
+    e.preventDefault();
 
     if (password.length < 6) {
       alert("A Senha deve ter no mínimo 6 caracteres");
-      return;
+      return
     }
     if (password !== confirmPassword) {
       alert("As senhas não conferem");
       return;
     }
     try {
-      await Signup(email, password)
+      await singUp(email, password)
     } catch (error) {
       alert("Ocorreu um erro ao tentar criar o usuário.");
+      return;
     }
   }
 
