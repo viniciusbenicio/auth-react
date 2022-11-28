@@ -3,6 +3,7 @@ import { AuthProvider } from "./context/authContext";
 import { Signup } from "./pages/Signup";
 import { UserProfile } from "./pages/UserProfile";
 import { Login } from "./pages/Login";
+import { UpdateProfile } from "./pages/UpdateProfile";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/" element={<UserProfile />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/update-profile" element={<UpdateProfile />}></Route>
           <Route
             path="*"
             element={

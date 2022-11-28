@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 
@@ -18,9 +18,10 @@ export const UserProfile = () => {
 
   return (
     <div className="container">
-      <h1>Perfil do Usuário</h1>
-
-      <button onClick={handleLogout}>Sair</button>
+      <div className="header">
+        <h1>Perfil do Usuário</h1>
+        <button onClick={handleLogout}>Sair</button>
+      </div>
 
       <table>
         <thead>
@@ -32,7 +33,9 @@ export const UserProfile = () => {
         <tbody>
           <tr>
             <td>{currentUser.email}</td>
-            <td>Atualizar perfil do Usuário</td>
+            <td>
+              <Link to='/update-profile'>Atualizar perfil do Usuário</Link>
+            </td>
           </tr>
         </tbody>
       </table>
