@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 export const Signup = () => {
@@ -54,6 +55,11 @@ export const Signup = () => {
         <button className="button-block" type="submit">
           Signup
         </button>
+        <div className="center">
+          <div>
+            <p>Já possui uma conta? <Link to="/login">Login</Link></p>
+          </div>
+        </div>
       </form>
     </div>
   );
